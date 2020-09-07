@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="text">Hex Color Code <br> #3A7959</div>
+        <button onclick="GenerateColor()">Generate New Color</button>
+    </div>
+
+
+    <script>
+        function GenerateColor() {
+            var symbols = "ABCDEF0123456789";
+            var color = "#";
+
+            for (let index = 0; index < 6; index++) {
+                color = color + symbols[Math.floor(Math.random() * 16)];
+            }
+        
+        document.body.style.backgroundColor = color;
+        document.getElementById("text").innerHTML = "Hex Color Code<br>"+ color;
+        }
+    </script>
+</body>
+
+</html>
